@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a[xx="item"]{
+            color: black;
+            text-decoration: none;
+            background-color: #eaeaea;
+            transition: background-color 0.25s ease;
+            transition: color 0.25s ease;
+        }
+        a[xx="item-chosen"]{
+            text-decoration: none;
+            background-color: #FFA500;
+            color: white;
+        }
+        a[xx="item"]:hover{
+            color: white;
+            background-color: #FFA500;
+            text-decoration: none;
+        }
+        .h-220{
+            height: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="content1"></div>
+    
+    <div style="height: 100px;"></div>
+    
+    <div class="container">
+        <!--上面（tiltle）-->
+        <div class="row">
+            <div style="height: 80px;line-height: 80px;
+                        background-color: #cc3333;font-size: 30px
+                        ;"
+                        class="col-3 border text-center fontsize-large text-white">
+                MVB&C
+            </div>
+            <div class="col border-bottom text-start mx-4 my-2 " style="line-height: 72px; font-size: 30px;">Medium Voltage Breaker and Contactor</div>
+        </div>
+        <!--内容-->
+        <div class="row ">
+            <div class="col-3">
+                <div class="row">
+                    <div class="col border">
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px; ">
+                            <a href="Relion_615_series.html"  xx="item">Relion 615 series</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="MVB&C.html"  xx="item-chosen">MVB&C</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="Protection_Relay.html"  xx="item">Protection Relay</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="SCADA.html"  xx="item">SCADA</a>
+                        </div>
+                    </div> 
+
+                </div>
+            </div>
+            <div class="col-9 border">
+                <div class="my-2 row  justify-content-around row-cols-auto">
+                    <div class="col border">
+                        <a href="MVB&C_Convac.html">
+                            <img src="../static/product/Convac.jpg" class="h-220" style="opacity: 1;">
+                            <div class="text-center" style="font-weight: bold;height: 50px;line-height: 50px;font-size: 20px;">Convac</div>
+                        </a>
+                    </div>
+                    <div class="col border">
+                        <a href="MVB&C_VD4.html">
+                            <img src="../static/product/VD4.jpg" class="h-220">
+                            <div class="text-center"style="font-weight: bold;height: 50px;line-height: 50px;font-size: 20px;">VD4</div>
+                        </a>
+                    </div>
+                    <div class="col border">
+                        <a href="#">
+                            <img src="../static/product/VEJ 12kV.jpg" class="h-220">
+                            <div class="text-center"style="font-weight: bold;height: 50px;line-height: 50px;font-size: 20px;">VEJ 12kV/40.5kV</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="my-2 row   row-cols-auto">
+                    <div class="col mx-3 border">
+                        <a href="MVB&C_VSC.html">
+                            <img src="../static/product/VSC.jpg" class="h-220" style="opacity: 1;">
+                            <div class="text-center" style="font-weight: bold;height: 50px;line-height: 50px;font-size: 20px;">VSC</div>
+                        </a>
+                    </div>
+                
+                    <div class="col border">
+                        1
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!------------------主代码------------------------>
+    <script>
+        const loadHtml = (url, targetId) => {
+            fetch(url)
+              .then(response => response.text())
+              .then(data => {
+                    document.getElementById(targetId).innerHTML = data;
+                });
+        };
+        loadHtml('navigate_product.html', 'content1');
+        
+    </script>
+    
+    
+</body>
+</html>
