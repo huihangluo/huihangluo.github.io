@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content1"></div>
+    <!-- 用于显示内容的容器 -->
+    <div style="height: 100px;"></div>
+    <div class="container border" style="height: 200px;">1</div>
+    
+<!------------------------------------主码在上------------------------------------->    
+    <script>
+        const loadHtml = (url, targetId) => {
+            fetch(url)
+              .then(response => response.text())
+              .then(data => {
+                    document.getElementById(targetId).innerHTML = data;
+                });
+        };
+        loadHtml('navigate.html', 'content1');
+    </script>
+</body>
+</html>
