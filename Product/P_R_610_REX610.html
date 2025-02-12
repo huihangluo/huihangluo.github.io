@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        #content1 {
+            position: relative; /* 需要设置定位属性，z-index 才会生效 */
+            z-index: 10; /* 设置一个较高的值 */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a[xx="item"]{
+            color: black;
+            text-decoration: none;
+            background-color: #eaeaea;
+            transition: background-color 0.25s ease;
+            transition: color 0.25s ease;
+        }
+        a[xx="item-chosen"]{
+            text-decoration: none;
+            background-color: #FFA500;
+            color: white;
+        }
+        a[xx="item"]:hover{
+            color: white;
+            background-color: #FFA500;
+            text-decoration: none;
+        }
+        .box{
+            width: 250px;
+            height: 240px;
+            position: relative;
+            border: #eaeaea;
+            overflow:hidden;
+        }
+        .box img {
+            max-width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /*文本*/
+        p {
+            line-height: 2; /* 增大段落的行间距 */
+        }
+        ul li {
+            line-height: 2; /* 增大列表项的行间距 */
+        }
+        /*文本*/
+    </style>
+</head>
+<body>
+    <div id="content1"></div>
+    
+    <div style="height: 100px;"></div>
+    
+    <div class="container">
+        <!--上面（tiltle）-->
+        <div class="row">
+            <div style="height: 80px;line-height: 80px;
+                        background-color: #cc3333;font-size: 30px
+                        ;"
+                        class="col-3 border text-center fontsize-large text-white">
+                    Protection 9Relay
+            </div>
+            <div class="col border-bottom text-start mx-4 my-2 " style="line-height: 72px; font-size: 30px;">Protection Relay</div>
+        </div>
+        <!--内容-->
+        <div class="row ">
+            <div class="col-3">
+                <div class="row">
+                    <div class="col border">
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px; ">
+                            <a href="Relion_615_series.html"  xx="item">Relion 615 series</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="MVB&C.html"  xx="item">MVB&C</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="Protection_Relay.html"  xx="item-chosen">SPACOM</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="SCADA.html"  xx="item">SCADA</a>
+                        </div>
+                    </div> 
+
+                </div>
+            </div>
+            <div class="col-9 border">
+                <div class="row">
+                    <div class="col mx-4 my-2"><img style="height: 320px;" src="../static/product/Protection_Relay/610/REX610.jpg"></div>
+                    <div class="col m-2"></div>
+                </div>
+                <div class="row mx-4 my-2" style="background-color: whitesmoke;">
+                    <div class="col-2 text-center" style="background-color: #cc3333; line-height: 50px;height:50px;color: white; font-size: 18px;">
+                        Detail
+                    </div>
+                    <div class="col-1" style="background-color: #FFA500; width: 5px;"></div>
+                </div>
+                <div class="row">
+                    <div class="col mx-4">
+                        <h1>All-in-one Protection and Control Relay</h1>
+                        <h1>REX610</h1>
+                        <h2>Description:</h2>
+                        <p>REX610 is a freely configurable all-in-one protection relay that covers all basic power distribution applications while keeping operation simple. With a small number of models, it is easy to order, set up, use, and maintain. Despite its rich functionality, REX610 remains a cost-effective choice. Its fully modular hardware design unlocks all available functions and enables continuous access to newly developed features, allowing for easy and flexible customization and modification at any time to adapt to changing protection and communication requirements.</p>
+                        <p>REX610 is part of the well-known Relion® family of protection and control relays, developed based on ABB's extensive experience in freely configurable multi-function relays and numerous proven protection algorithms.</p>
+                        <h2>Product Advantages:</h2>
+                        <ul>
+                            <li>One device covers multiple applications, offering the best flexibility and cost-effectiveness.</li>
+                            <li>Modular and scalable design for easy and flexible customization to meet changing protection and communication needs.</li>
+                            <li>Plug-and-play solution, where installed hardware modules unlock all available functions.</li>
+                            <li>Comes with a wide range of default functions, including communication capabilities, which can be easily changed at no extra cost.</li>
+                            <li>Continuous access to newly developed features through firmware updates.</li>
+                            <li>Equipped with a convenient custom retrofit adapter for seamless replacement of SPACOM with the REX610 relay.</li>
+                        </ul>
+                        <h2>Product Features:</h2>
+                        <ul>
+                            <li>Freely configurable relay for flexible customization according to specific application requirements.</li>
+                            <li>12 models cover all basic applications.</li>
+                            <li>Plug-in withdrawable unit for quick replacement and short maintenance time, minimizing costly downtime.</li>
+                            <li>Option to replace one or more modules without replacing the entire relay.</li>
+                            <li>Three arc sensor input interfaces with monitoring function.</li>
+                            <li>Complies with IEC 61850 Edition 2 and is certified by DNV/GL (KEMA).</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <!------------------主代码------------------------>
+    <script>
+        const loadHtml = (url, targetId) => {
+            fetch(url)
+              .then(response => response.text())
+              .then(data => {
+                    document.getElementById(targetId).innerHTML = data;
+                });
+        };
+        loadHtml('navigate_product.html', 'content1');
+        
+    </script>
