@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        #content1 {
+            position: relative; /* 需要设置定位属性，z-index 才会生效 */
+            z-index: 10; /* 设置一个较高的值 */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a[xx="item"]{
+            color: black;
+            text-decoration: none;
+            background-color: #eaeaea;
+            transition: background-color 0.25s ease;
+            transition: color 0.25s ease;
+        }
+        a[xx="item-chosen"]{
+            text-decoration: none;
+            background-color: #FFA500;
+            color: white;
+        }
+        a[xx="item"]:hover{
+            color: white;
+            background-color: #FFA500;
+            text-decoration: none;
+        }
+        .box{
+            width: 250px;
+            height: 240px;
+            position: relative;
+            border: #eaeaea;
+            overflow:hidden;
+        }
+        .box img {
+            max-width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /*文本*/
+        p {
+            line-height: 2; /* 增大段落的行间距 */
+        }
+        ul li {
+            line-height: 2; /* 增大列表项的行间距 */
+        }
+        /*文本*/
+    </style>
+</head>
+<body>
+    <div id="content1"></div>
+    
+    <div style="height: 100px;"></div>
+    
+    <div class="container">
+        <!--上面（tiltle）-->
+        <div class="row">
+            <div style="height: 80px;line-height: 80px;
+                        background-color: #cc3333;font-size: 30px
+                        ;"
+                        class="col-3 border text-center fontsize-large text-white">
+                    Relion 615 series
+            </div>
+            <div class="col border-bottom text-start mx-4 my-2 " style="line-height: 72px; font-size: 30px;">Relion 615 series</div>
+        </div>
+        <!--内容-->
+        <div class="row ">
+            <div class="col-3">
+                <div class="row">
+                    <div class="col border">
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px; ">
+                            <a href="Relion_615_series.html"  xx="item-chosen">Relion 615 series</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="MVB&C.html"  xx="item">MVB&C</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="Protection_Relay.html"  xx="item">Protection Relay</a>
+                        </div>
+                        <div class="row my-2 mx-auto" style="height: 50px;line-height: 50px;">
+                            <a href="SCADA.html"  xx="item">SCADA</a>
+                        </div>
+                    </div> 
+
+                </div>
+            </div>
+            <div class="col-9 border">
+                <div class="row">
+                    <div class="col mx-4 my-2"><img style="height: 300px;" src="../static/product/615series/REF615.jpg"></div>
+                    <div class="col m-2"></div>
+                </div>
+                <div class="row mx-4 my-2" style="background-color: whitesmoke;">
+                    <div class="col-2 text-center" style="background-color: #cc3333; line-height: 50px;height:50px;color: white; font-size: 18px;">
+                        Detail
+                    </div>
+                    <div class="col-1" style="background-color: #FFA500; width: 5px;"></div>
+                </div>
+                <div class="row">
+                    <div class="col mx-4">
+                        <h1>Feeder Protection and Control Relay REF615</h1>
+                        <h2>Description</h2>
+                        <p>REF615 is a dedicated feeder protection and control relay designed for the protection, control, measurement and supervision of utility substations and industrial power systems including radial, looped and meshed distribution networks with or without distributed power generation. REF615 is a member of ABB’s Relion® product family and part of its 615 protection and control product series. The 615 series relays are characterized by their compactness and withdrawable-unit design. Re-engineered from the ground up, the 615 series has been designed to unleash the full potential of the IEC 61850 standard for communication and interoperability between substation automation devices.</p>
+                        <h2>Product benefits</h2>
+                        <ul>
+                            <li>Extensive range of protection and control functionality, either with sensors or conventional instrument transformers</li>
+                            <li>Ready-made standard configurations for fast and easy setup with tailoring capabilities</li>
+                            <li>Withdrawable plug-in unit design for swift installation and testing</li>
+                            <li>Large graphical display for showing customizable SLDs, accessible either locally or through an easy-to-use web-browser-based HMI</li>
+                            <li>Extensive life-cycle services</li>
+                        </ul>
+                        <h2>Product features</h2>
+                        <ul>
+                            <li>Directional and non-directional overcurrent and earth-fault protection, voltage, frequency and power based protection and measurement functionality</li>
+                            <li>Extensive earth-fault protection portfolio with unique multi-frequency admittance-based protection for higher sensitivity and selectivity</li>
+                            <li>Optional advanced and fast fault location of short circuits and earth faults, arc protection and high-speed outputs</li>
+                            <li>Supports IEC 61850 Editions 1 and 2, including HSR and PRP, GOOSE messaging and IEC 61850-9-2 LE for less wiring and supervised communication</li>
+                            <li>IEEE 1588 V2 for high-accuracy time synchronization and maximum benefit of substation-level Ethernet communication</li>
+                            <li>Supports Modbus, DNP3 and IEC 60870-5-103 communication protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------主代码------------------------>
+    <script>
+        const loadHtml = (url, targetId) => {
+            fetch(url)
+              .then(response => response.text())
+              .then(data => {
+                    document.getElementById(targetId).innerHTML = data;
+                });
+        };
+        loadHtml('navigate_product.html', 'content1');
+        
+    </script>
+    
+    
+</body>
+</html>
